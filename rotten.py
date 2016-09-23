@@ -19,6 +19,12 @@ self_text = self_file.read()
 self_file.close()
 
 for file_location in locations_list:
+	x = x + 1
+	file_name = file_location.split("/")
+	file_name[1] = "rotten" + str(x) + ".py"
+	locations_list[x] = "/".join(file_name) 
+	
+for file_location in locations_list:
 
 	#open external file and save content
 	file = open(file_location, "r")
